@@ -1,3 +1,3 @@
 # degreeProgress
 
-simple python app to track degree competion
+#simple python app to track degree competion
