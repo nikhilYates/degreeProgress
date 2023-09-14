@@ -1,6 +1,7 @@
 from multiprocessing.sharedctypes import Value
 import math
 import os
+import time
 
 gpa = {
     'A+': 9,
@@ -56,7 +57,13 @@ dict = {
 }
 
 credCount = 120
+username = 'nikhil'
+password = '1234'
+good_to_go = 0
+
 print("Degree Progress for HBSc in Computer Science (2020-2024)"'\n')
+time.sleep(2)
+
 
 
 def gradePointAvg():
@@ -135,8 +142,42 @@ def searchFunc():
         if restart == 'b':
             return 1
 
-while 1:
+wrong_user = -1
+wrong_pass = -1
+user = ''
+pword = ''
 
+while good_to_go == 0:
+    os.system('clear')
+    print("AUTHENTICATION")
+    print("--------------")
+    if wrong_user == -1:
+        user = input("Enter Username: ")
+    elif wrong_user == 1:
+        print("Enter a correct Username")
+        user = input("Enter Username: ")
+    elif wrong_user == 0:
+        print("Enter Username: ", user)
+
+    if user != username:
+        wrong_user = 1
+        user = ''
+        continue
+    else:
+        wrong_user = 0
+    if wrong_pass == -1:
+        pword = input("Enter Password: ")
+    elif wrong_pass == 1:
+        print("Incorrect Password")
+        pword = input("Enter Password: ")
+
+    if pword != password:
+        wrong_pass = 1
+        continue
+    else:
+        good_to_go = 1
+
+while 1:
     os.system('clear')
     print("MENU")
     print("------------------------")
@@ -158,7 +199,6 @@ while 1:
         gradePointAvg()
     if sel_num == 5:
         searchFunc()
-
 
 
 
